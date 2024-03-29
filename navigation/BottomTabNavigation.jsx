@@ -8,7 +8,7 @@ import {COLORS} from "../constants/index"
 
 const Tab = createBottomTabNavigator();
 const screenOptions={
-    tabBarShoeLabel:false,
+    tabBarShowLabel:false,
     tabBarHideOnKeyboard:true,
     headerShown:false,
     tabBarStyle:{

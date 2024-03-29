@@ -5,12 +5,11 @@ import { useCallback } from 'react';
 import * as SplashScreen from "expo-splash-screen"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {BottomTabNavigation} from './navigation/BottomTabNavigation'
+import BottomTabNav from './navigation/BottomTabNav';
 
 
+const Stack = createNativeStackNavigator();
 export default function App() {
-
-  const Stack = createNativeStackNavigator();
 
   const[fontsLoaded] = useFonts({
     regular:require("./assets/fonts/Poppins-Regular.ttf"),
@@ -30,24 +29,24 @@ export default function App() {
   return (
     
     <>
-    {/* <View style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.textStyle}>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
-    </View> */}
+    </View>
+
     <NavigationContainer>
       <Stack.Navigator>
-
-        <Stack.Screen
-          name='Bottom Navigation'
-          component={BottomTabNavigation}
-          options={{headerShown:false}}
-
-        />
-
-
-        
+      <Stack.Screen
+       name="Bottom Navigation"
+       component={BottomTabNav}
+       options = {{headerShown:false}}
+       />
       </Stack.Navigator>
+      
+      
     </NavigationContainer>
+
+    
     </>
   );
 }
