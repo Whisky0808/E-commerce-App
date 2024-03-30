@@ -1,14 +1,23 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import styles from './home.style'
+import {Ionicons} from '@expo/vector-icons'
+
+
 
 const Home = () => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <SafeAreaView>
+      <View style={styles.appBarWrapper}>
+        <View style={styles.appBar}>
+            <Ionicons name="location-outline" size={24}/>
+            <Text style={styles.location}> Shanghai China </Text>
+        </View>
+      </View>
+    </SafeAreaView>
   )
 }
 
 export default Home
 
-const styles = StyleSheet.create({})
